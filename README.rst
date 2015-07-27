@@ -122,6 +122,8 @@ Graffiti-monkey itself can be configured using a yaml file
 ::
 
   ---
+  _aws_access_key_id: AKIAoiqhjwefoiuehjwfgoijwefoijwefoijwef
+  _aws_secret_access_key locf08ny23ctrn0q23r0n23rcopq23rvn0/242424
   #region: us-west-1
   _instance_tags_to_propagate:
     - 'Name'

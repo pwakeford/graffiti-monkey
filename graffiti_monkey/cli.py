@@ -15,6 +15,7 @@
 import argparse
 import logging
 import sys
+import os
 
 from graffiti_monkey.core import GraffitiMonkey, Logging
 from graffiti_monkey import __version__
@@ -157,6 +158,10 @@ class GraffitiMonkeyCli(object):
         self.nosnapshots = self.args.nosnapshots
 
     def initialize_monkey(self):
+        if self.config['_aws_access_key_id']:
+          os.environ['AWS_ACCESS_KEY_ID'] = self.config['_aws_access_key_id']
+        if self.config['_aws_secret_access_key']:
+          os.environ['AWS_SECRET_ACCESS_KEY'] = self.config['_aws_secret_access_key']
         self.monkey = GraffitiMonkey(self.region,
                                      self.profile,
                                      self.config["_instance_tags_to_propagate"],
